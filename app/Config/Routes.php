@@ -51,3 +51,5 @@ $routes->get('listar', 'User::index');
 $routes->get('crear', 'User::crear');
 $routes->post('guardar', 'User::guardar');
 $routes->get('eliminar/(:num)', 'User::eliminar/$1');
+$routes->get('editar/(:num)', 'User::editar/$1');
+$routes->post('actualizar', 'User::actualizar');
