@@ -9,5 +9,5 @@ class UserModel extends Model{
     protected $primaryKey = 'id';
     // Esta linea de abajo nos permite que no se inserten los campos created_at y updated_at y que no se actualicen
     // protected sirve para que no se pueda modificar desde fuera de la clase
-    protected $allowedFields = ['name', 'apellido', 'email'];
+    protected $allowedFields = ['nombre', 'apellido', 'email'];
 }

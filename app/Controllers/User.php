@@ -11,6 +11,7 @@ class User extends Controller{
         $datos['usuarios'] = $usuario->orderBy('id', 'ASC')->findAll();
         $datos['cabecera'] = view('plantilla/cabecera');
         $datos['piePagina'] = view('plantilla/piePagina');
+        print_r($datos);
         return view('Usuarios/listar', $datos);
     }
     public function crear(){
@@ -20,16 +21,11 @@ class User extends Controller{
         return view('Usuarios/crear', $datos);
     }
     public function guardar(){
-        $usuario = new UserModel();
-
-        $nombre = $this->request->getVar('nombre');
-        $apellido = $this->request->getVar('apellido');
-        $email = $this->request->getVar('email');
-     
+        $usuario = new UserModel();     
         $datos = [
-            'nombre' => $nombre,
-            'apellido' => $apellido,
-            'email' => $email,
+            'nombre' => $this->request->getVar('nombre'),
+            'apellido' => $this->request->getVar('apellido'),
+            'email' => $this->request->getVar('email'),
         ];
 
         $usuario->insert($datos);
